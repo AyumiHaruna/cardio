@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap" rel="stylesheet"> 
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="manifest" href="./img/site.webmanifest">
+            
+    <title>Constancias</title>
+</head>
+<body>
+    <div id="app">
+        <header>    
+            <nav class="navContainer">
+                Bienvenidos
+            </nav>
+        </header>
+        
+        <main class="container-fluid">        
+    
+            <div class="row">
+                <div class="col s12 imageBlock">
+                    <div class="row">
+                        <section class="col m6 s12 logoContainer">
+                            <img src="./img/logo.png" alt="logo dia mundial del corazon" class="logoImg">
+                        </section>
+                        <section class="col l6 m12 infoMsg">
+                            Bienvenidos al área de obtención de constancias del "CURSO DE REANIMACIÓN CARDIOPULMONAR
+                            SOLO CON LAS MANOS".
+                        </section>
+                    </div>
+        
+    
+                    <div class="row">
+                        <div class="col l4 offset-l4 m6 offset-m3 s12">
+                            <section class="description">
+                                <p>
+                                    Localice su <strong> CERTIFICADO </strong> escribiendo en la caja de búsqueda su nombre o apellido y descargue el archivo PDF en su computadora. 
+                                </p>
+                            </section>
+    
+                            <section class="constancia">
+                                  <form action="#" @submit.prevent="cancelEnter">            
+                                      <div class="input-field">
+                                        <i class="material-icons prefix">search</i>
+                                        <input id="icon_prefix" type="text" class="validate" v-model="name" @input="testFirstLetter" @keyup.enter="cancelEnter">
+                                        <label for="icon_prefix">Busca aquí tu Constancia:</label>
+                                      </div>
+                                  </form>
+                            </section>
+                            <p class="privacidad">Tu privacidad es muy importante para nosotros, en caso de requerir la eliminación de tus datos personales, 
+                                manda un correo a <a href="mailto:contacto@smcardiologia.org.mx">contacto@smcardiologia.org.mx</a></p>
+                        </div>
+                    </div>
+    
+                    <div class="row" ref="table">
+                        <section class="col l8 offset-l2 m10 offset-m1 s12 tableContainer" v-if="nameList.length > 0">
+                            <table class="striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Constancia</th>
+                                    </tr>
+                                </thead>
+                                <tbody>  
+                                    <tr v-for="index in 10" :key="index">
+                                        <td class="name">{{ filteredNames[ customIndex( index ) ] }}</td>
+                                        <td class="link">
+                                            <a 
+                                                :href="`https://constanciasdmundialdelcorazon.com.mx/db/${filteredNames[ customIndex( index )]}.pdf`" 
+                                                target="_blank"
+                                                v-if="filteredNames[ customIndex( index ) ]"
+                                            >
+                                                <img src="img/download.png" alt="enlace al diploma">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="pagination">
+                                <button v-for="index in noPages" :key="index" @click="changeCurrentPage(index)" class="pagBtn">
+                                    {{index}}
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+        <footer v-if="showFooter">
+            <div class="child">
+                <img src="./img/logoCard.svg" alt="logo sociedad mexicana de cardiología">
+            </div>
+            <div class="child">
+                <span>Una Iniciativa de la Sociedad Mexicana de Cardiología</span>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script src="https://unpkg.com/vue@next"></script>
+<script src="app.js"></script>
+
+</html>

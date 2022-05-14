@@ -1,0 +1,239 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.navContainer {
+    padding: 0vw 0 2vw 5vw;
+    position: relative;
+    z-index: 9;
+    color: #e53232;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+nav {
+    background-color: #fff !important;
+}
+
+.container-fluid{
+    overflow-x:hidden;
+    background-color: #f3fcfe;
+}
+
+.row .col.imageBlock {
+    background-image: url(./img/background2.png);
+    background-size: 100% auto;
+    background-repeat:no-repeat;
+    padding-bottom: 4.8em;
+    min-height: 100vh;
+}
+
+.row .col.logoContainer {
+    padding: 10vh 0 0 5vw;
+}
+.logoContainer .logoImg {
+    width: 35vw;
+}
+.row .col.infoMsg{
+    color: #6c3f3e;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 9em;
+    padding: 0 7em;
+}
+
+.description {
+    color: #6c3f3e;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 700;
+}
+
+.constancia {
+    margin-top: 4vw;
+}
+
+.privacidad {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    margin-top: 2vw;
+}
+
+/* label color */
+.input-field label {
+    color: #6c3f3e !important;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em !important;
+  }
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: #333 !important;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .input-field input{
+    border-bottom: 1px solid #6c3f3e !important;
+  }
+  /* label underline focus color */
+  .input-field input:focus {
+    border-bottom: 1px solid #333 !important;
+    box-shadow: 0 1px 0 0 #333 !important;
+  }
+  /* valid color */
+  .input-field input.valid {
+    border-bottom: 1px solid #6c3f3e;
+    box-shadow: 0 1px 0 0 #6c3f3e;
+  }
+  .input-field input:active {
+    color: #333 !important;
+  }
+  /* invalid color */
+  .input-field input.invalid {
+    border-bottom: 1px solid #6c3f3e;
+    box-shadow: 0 1px 0 0 #6c3f3e;
+  }
+  /* icon prefix focus color */
+  .input-field .prefix.active {
+    color: #333 !important;
+  }
+  .input-field .prefix {
+      color: #6c3f3e;
+  }
+
+  .row .col.tableContainer {
+      background-color: rgba(177, 22, 32,0.8);
+      padding: 1vw 7vw;
+      margin-top: 2vw;
+      color: whitesmoke;
+      font-family: 'Montserrat', sans-serif;
+  }
+  table.striped > tbody > tr:nth-child(2n+1) {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.tableContainer a img {
+    width: 40px;
+}
+tr {
+    height: 2.5em;
+}
+td {
+    padding: 7px 5px !important;
+}
+th {
+    font-size: 1.3em;
+    text-align: center !important;
+}
+.name {
+    padding-left: 2vw !important;
+    font-weight: 500;
+}
+.link {
+    text-align: center;
+}
+
+.pagination{
+    text-align: center;
+    padding-top: 2em;
+}
+.pagBtn {
+    width: 4em;
+    background: none;
+    margin-top: 1em;
+    padding: 0.4em;
+    border: none;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+.pagBtn:hover {
+    background-color: rgba(255,255,255, 0.5);
+    transition: background-color 1s;
+}
+
+footer {
+    /* background-color: rgba(177, 22, 32,0.8); */
+    background-color: #bd434c;
+    width: 100vw;
+    padding: 0.5vw 2vw 0 0;
+    position: fixed;
+    bottom: 0;
+    z-index: 9;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: flex-start;
+}
+footer img {
+    width: 70px;
+    background-color: rgba(245, 245, 245, 0.5);
+    margin-right: 1em;
+}
+footer span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    color: whitesmoke;
+    font-weight: bold;
+   }
+
+@media (max-width:992px){
+    .row .col.logoContainer {
+        padding: 5vh 0 0 5vw;
+    }
+    .logoContainer .logoImg {
+        width: 40vw;
+    }
+    .row .col.infoMsg {
+        margin: 2em;
+        padding: 0 7em;
+    }
+    .description {
+        padding-bottom: 2em;
+    }
+    footer {
+        padding: 0.3em;
+        justify-content: center;
+    }
+}
+@media (max-width:576px){
+    .row .col.logoContainer {
+        text-align: center;
+        padding: 2em 0 0 0;
+    }
+    .logoContainer .logoImg {
+        width: 70vw;
+    }
+    .row .col.infoMsg {
+        margin: 2.2em 0 0 0;
+        padding: 0 1em;
+        font-size: 1.3em;
+        text-align: justify;
+    }
+    .description {
+        padding: 1em;
+        text-align: justify;
+    }
+    .constancia {
+        padding: 1em;
+    }
+    .privacidad {
+        padding: 1em;
+        font-size: 0.9em;
+    }
+    .row .col.tableContainer {
+        padding: 1em 2em 4em 2em;
+    }
+    footer {
+        padding: 1em;
+        justify-content: center;
+    }
+    footer span{
+        font-size: 1em;
+    }
+}
+ 
